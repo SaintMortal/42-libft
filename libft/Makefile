@@ -4,7 +4,8 @@ NAME = myprog.o
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 # Source files and object files
-SRCS = main.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strdup.c ft_strcpy.c ft_strcmp.c ft_strjoin.c ft_itoa.c
+SRCS = main.c ft_strlen.c ft_putnbr.c ft_atoi.c ft_strdup.c ft_strcpy.c ft_strcmp.c ft_strjoin.c ft_itoa.c ft_substr.c \
+ft_split.c ft_putchar_fd.c 
 OBJS = $(SRCS:.c=.o)
 
 # Rules for building the library
