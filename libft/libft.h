@@ -20,4 +20,5 @@ void ft_putendl_fd(char *s, int fd);
 void ft_putnbr_fd(int n, int fd);
 void *ft_memset(void *b, int c, size_t len);
 void ft_bzero(void *s, size_t n);
+void *ft_memcpy(void *dest, const char *src, size_t n);
 #endif
