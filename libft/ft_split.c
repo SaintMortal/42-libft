@@ -17,22 +17,28 @@ int wordsCounter(char const *s, char c) {
 }
 
 char **ft_split(char const *s, char c) {
-    int word_count = wordsCounter(s, c);
-    char **result = malloc((word_count + 1) * sizeof(char *));
+    int word_count;
+    char **result;
+    int idx;
+    int i;
+    int start;
+
+    word_count = wordsCounter(s, c);
+    result = malloc((word_count + 1) * sizeof(char *));
     if (!result) return NULL;
     result[word_count] = NULL;
-    
-    int idx = 0;
-    int i = 0;
-    while (s[i] && idx < word_count) {
-        // Пропустить разделители
+    idx = 0;
+    i = 0;
+    while (s[i] && idx < word_count)
+    {
         while (s[i] == c) i++;
-        if (!s[i]) break;
-        
-        int start = i;
-        // Найти конец слова
-        while (s[i] && s[i] != c) i++;
-        
+        if (!s[i])
+            break;
+        start = i;
+        while (s[i] && s[i] != c)
+        {
+            i++;
+        }
         result[idx++] = ft_substr(s, start, i - start);
     }
     return result;
