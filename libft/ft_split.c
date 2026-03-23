@@ -1,46 +1,39 @@
 #include "libft.h"
-int wordsCounter(char const *s, char c)
-{
-    int word_count;
-    int i;
-
-    word_count = 0;
-    i = 0;
-    while (s[i])
-    {
-        if(s[i] == c  || s[i + 1] == '\0')
-            word_count++;
+int wordsCounter(char const *s, char c) {
+    int count = 0;
+    int in_word = 0;
+    int i = 0;
+    while (s[i]) {
+        if (s[i] != c && !in_word) {
+            count++;
+            in_word = 1;
+        }
+        if (s[i] == c) {
+            in_word = 0;
+        }
         i++;
     }
-    return (word_count);
+    return count;
 }
 
-char	**ft_split(char const *s, char c)
-{
-    char **result;
-    int i;
-    int strlen;
-    int word_index;
-    int start;
-
-    word_index = wordsCounter(s, c);
-    result = malloc((word_index + 1) * sizeof(char *));
-    result[word_index] = NULL;
-
-    strlen = 0;
-    i = 0;
-    start = 0;
-        while (s[strlen] && i < word_index)
-        {
-            if (s[strlen] == c || s[strlen + 1] == '\0')
-            {
-                strlen++; 
-                result[i] = ft_substr(s, start, strlen - start - 1);
-                start = strlen;
-              i++;
-            }
-            else
-                strlen++;
-        }
-    return (result);
+char **ft_split(char const *s, char c) {
+    int word_count = wordsCounter(s, c);
+    char **result = malloc((word_count + 1) * sizeof(char *));
+    if (!result) return NULL;
+    result[word_count] = NULL;
+    
+    int idx = 0;
+    int i = 0;
+    while (s[i] && idx < word_count) {
+        // Пропустить разделители
+        while (s[i] == c) i++;
+        if (!s[i]) break;
+        
+        int start = i;
+        // Найти конец слова
+        while (s[i] && s[i] != c) i++;
+        
+        result[idx++] = ft_substr(s, start, i - start);
+    }
+    return result;
 }
