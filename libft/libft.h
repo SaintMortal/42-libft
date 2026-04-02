@@ -31,4 +31,5 @@ char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_isalpha(int c);
+int ft_isdigit(int c);
 #endif
