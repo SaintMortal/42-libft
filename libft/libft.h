@@ -40,4 +40,5 @@ int ft_tolower(int c);
 int strncmp(const char *s1, const char *s2, size_t n);
 void *ft_calloc(size_t count, size_t size);
 char *ft_strstrim(char const *s1, char const *set);
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 #endif
