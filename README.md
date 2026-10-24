@@ -1,83 +1,58 @@
-# 42-libft
-C library
-Проверка и преобразование символов
+# 42 - Libft
 
-    ft_isalpha — Проверяет, является ли символ буквой.
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Finished-success?style=for-the-badge&logo=none" alt="Status">
+  <img src="https://img.shields.io/badge/Grade-100%2F100-brightgreen?style=for-the-badge&logo=42" alt="Grade">
+  <img src="https://img.shields.io/badge/Language-C-blue?style=for-the-badge&logo=c" alt="Language">
+</p>
 
-    ft_isdigit — Проверяет, является ли символ цифрой (0–9).
+<p align="center">
+  <b>The very first project at 42: rewriting a foundational subset of the standard C library, along with additional helpful utilities.</b>
+</p>
 
-    ft_isalnum — Проверяет, является ли символ буквой или цифрой.
+---
 
-    ft_isascii — Проверяет, входит ли символ в таблицу ASCII (0–127).
+## 📖 About
 
-    ft_isprint — Проверяет, является ли символ печатным (включая пробел).
+**Libft** is an individual project at 42 that challenges students to recreate standard C library functions (`<string.h>`, `<stdlib.h>`, etc.) from scratch, alongside a collection of other useful functions that can be used as a solid foundation for future 42 C projects. 
 
-    ft_toupper — Преобразует строчную букву в прописную.
+This project teaches you how the C standard library works under the hood, how to manage memory efficiently, and how to structure and document your own reusable C library (`.a` static library).
 
-    ft_tolower — Преобразует прописную букву в строчную.
+---
 
-2. Работа с памятью
+## 🛠️ Functions Included
 
-    ft_memset — Заполняет блок памяти указанным байтом.
+### 1. Libc Functions
+*Reimplementations of standard C library functions:*
+* **Memory:** `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memccpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`, `ft_calloc`, `ft_strdup`
+* **Strings:** `ft_strlen`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strlcpy`, `ft_strlcat`, `ft_strnstr`
+* **Conversions:** `ft_atoi`, `ft_itoa`
+* **Character Checks:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`
 
-    ft_bzero — Зануляет блок памяти (заполняет его \0).
+### 2. Additional Functions
+*Custom utility functions added for 42 projects:*
+* `ft_substr` — Extracts a substring from a string.
+* `ft_strjoin` — Concatenates two strings into a new string.
+* `ft_strtrim` — Trims the specified characters from the beginning and end of a string.
+* `ft_split` — Splits a string using a character as a delimiter into an array of strings.
+* `ft_strmi` / `ft_strmapi` — Applies a function to each character of a string.
+* `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd` — Output functions to a given file descriptor.
 
-    ft_memcpy — Копирует область памяти из одного места в другое (без учета перекрытия).
+### 3. Bonus Functions (Linked Lists)
+*Data structure utilities for singly linked lists:*
+* `ft_lstnew`, `ft_lstadd_front`, `ft_lstsize`, `ft_lstlast`, `ft_lstadd_back`
+* `ft_lstdelone`, `ft_lstclear`, `ft_lstiter`, `ft_lstmap`
 
-    ft_memmove — Безопасно копирует область памяти (даже если области перекрываются).
+---
 
-    ft_memchr — Ищет первое вхождение байта в блоке памяти.
+## 🚀 Getting Started
 
-    ft_memcmp — Сравнивает два блока памяти байт за байтом.
+### Prerequisites
+You need a C compiler (`gcc` or `clang`) and `make` installed on your system.
 
-    ft_calloc — Выделяет память под массив и зануляет её.
+### Installation
 
-3. Работа со строками
-
-    ft_strlen — Возвращает длину строки.
-
-    ft_strlcpy — Безопасно копирует строку в буфер заданного размера.
-
-    ft_strlcat — Безопасно добавляет одну строку в конец другой.
-
-    ft_strchr — Ищет первое вхождение символа в строке.
-
-    ft_strrchr — Ищет последнее вхождение символа в строке.
-
-    ft_strncmp — Сравнивает две строки до N символов.
-
-    ft_strcmp — Сравнивает две строки целиком.
-
-    ft_strcpy — Копирует строку (стандартная версия).
-
-    ft_strnstr — Ищет подстроку в строке с ограничением по длине поиска.
-
-    ft_strdup — Создает дубликат строки, выделяя память через malloc.
-
-4. Дополнительные функции (Part 2)
-
-    ft_atoi — Преобразует строку в целое число (int).
-
-    ft_itoa — Преобразует целое число в строку (malloc).
-
-    ft_substr — Создает новую подстроку из существующей строки.
-
-    ft_strjoin — Склеивает две строки в одну новую.
-
-    ft_strtrim — Обрезает заданные символы с начала и конца строки.
-
-    ft_split — Разрезает строку на массив строк по заданному разделителю.
-
-    ft_strmapi — Создает новую строку, применяя функцию к каждому символу оригинала (с индексом).
-
-5. Вывод (File Descriptors)
-
-    ft_putchar_fd — Выводит символ в указанный файловый дескриптор.
-
-    ft_putstr_fd — Выводит строку в указанный дескриптор.
-
-    ft_putendl_fd — Выводит строку и перенос строки в дескриптор.
-
-    ft_putnbr_fd — Выводит число в указанный дескриптор.
-
-    ft_putnbr — Выводит число в стандартный вывод (STDOUT).
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/SaintMortal/42-libft.git](https://github.com/SaintMortal/42-libft.git)
+   cd 42-libft
